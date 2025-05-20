@@ -1,8 +1,9 @@
 {
   "version": 2,
-  "functions": {
-    "api/openai-proxy.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "builds": [
+    { "src": "api/openai-proxy.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/openai-proxy", "dest": "api/openai-proxy.js" }
+  ]
 }
